@@ -26,7 +26,7 @@
 		<td width="20%" class="label">{fieldLabel name="corePluginTitle" required="false" key="plugins.generic.corePlugin.manager.settings.corePluginTitle"}</td>
 		<td width="80%" class="value"><input type="text" name="corePluginTitle" id="corePluginTitle" value="{if $corePluginTitle}{$corePluginTitle|escape}{else}Similar Articles (Provided by CORE){/if}" size="30" maxlength="255" class="textField" />
 		<br />
-		<span class="instruct">{translate key="plugins.generic.corePlugin.manager.settings.coreApiKeyInstructions"}</span>
+		<span class="instruct">{translate key="plugins.generic.corePlugin.manager.settings.corePluginTitleInstructions"}</span>
 	</td>
 	</tr>
 </table>

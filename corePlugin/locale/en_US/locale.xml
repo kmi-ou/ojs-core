@@ -13,7 +13,7 @@
     
 	<!-- corePlugin Settings Management -->
 	<message key="plugins.generic.corePlugin.manager.settings">Settings</message>
-	<message key="plugins.generic.corePlugin.manager.corePluginSettings">corePlugin Settings</message>
+	<message key="plugins.generic.corePlugin.manager.corePluginSettings">CORE Plugin Settings</message>
 	<message key="plugins.generic.corePlugin.manager.settings.description"><![CDATA[<p>This plugin displays a list of similar articles.</p>]]></message>
     
 	<message key="plugins.generic.corePlugin.manager.settings.coreApiKey">CORE API Key</message>		
@@ -21,6 +21,6 @@
 	<message key="plugins.generic.corePlugin.manager.settings.coreApiKeyRequired">You need to insert your API key</message>		
 
     <message key="plugins.generic.corePlugin.manager.settings.corePluginTitle">Heading of the CORE Plugin</message>		
-    <message key="plugins.generic.corePlugin.manager.settings.coreApiKeyInstructions">This text will be displayed above CORE suggestions</message>
+    <message key="plugins.generic.corePlugin.manager.settings.corePluginTitleInstructions">This text will be displayed above CORE suggestions. You may leave this blank.</message>
     
 </locale>
