@@ -35,7 +35,7 @@
 		if (options) {
 			$.extend(settings, options);
 		}
-
+        
 		var xhr = null;
 		// api key and at least one of OAI, URL or abstract have to be specified
 		if (settings.apiKey && (settings.documentOAI || settings.documentUrl || settings.documentAbstract)) {

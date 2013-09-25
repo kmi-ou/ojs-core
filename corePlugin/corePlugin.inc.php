@@ -162,24 +162,34 @@ class corePlugin extends GenericPlugin {
             $corePluginTitle = $this->getSetting($journalId, 'corePluginTitle');
 
 			if (!empty($coreApiKey)) {
-				$output =   '<!-- CORE Plugin Section -->'.	
-                        '<div id="pluginOutput"></div>'.
-                        '<script type="text/javascript" src="'. Request::getBaseUrl() . '/' . $this->getPluginPath() . '/js/jquery.coreWidget.js" /></script>'.
-                        '<script type="text/javascript">'.
-                        '    $(function() {'.
-                        '        $("#pluginOutput").coreWidget("' . $corePluginTitle . '" ,{'.
-                        '            documentOAI: "OAI:" + $("meta[name=\'DC.Identifier.URI\']").attr("content") + ":" + $("meta[name=\'DC.Identifier\']").attr("content") ,'.
-                        '            documentUrl: $("meta[name=\'DC.Identifier.URI\']").attr("content"),'.
-                        '            documentTitle: $("meta[name=\'DC.Title\']").attr("content"),'.
-                        '            documentAuthors: ["", "", ""],'.
-                        '            documentAbstract: $("meta[name=\'DC.Description\']").attr("content"),'.
-                        '            apiKey: "V92JJ1LqdzX1hm0Ozp1tlL1FfWaW1bhL"'.
-                        '    });'.
-                        '});'.
-                        '</script>'.
-						'<!-- End CORE Plugin Section -->';
-                //error_log(print_r($smarty, true), 3, "/data/web/my-errors.log");
-     
+				$output =   '<!-- CORE Plugin Section -->'.	 "\r\n" .
+                        '<div id="pluginOutput"></div>'. "\r\n" .
+                        '<script type="text/javascript" src="'. Request::getBaseUrl() . '/' . $this->getPluginPath() . '/js/jquery.coreWidget.js" /></script>'. "\r\n" .
+                        '<script type="text/javascript">'. "\r\n" .
+                        '    $(function() {'. "\r\n" .
+                        '        if ($("meta[name=\'DC.Identifier\']").length != 0) {'. "\r\n" .
+                        '           var oai = "OAI:" + window.location.hostname + ":" + $("meta[name=\'DC.Identifier\']").attr("content");'. "\r\n" .
+                        '        } else { var oai = ""; } '.  "\r\n" .
+                        '        if ($("meta[name=\'DC.Identifier.URI\']").length != 0) {'. "\r\n" .
+                        '           var url = $("meta[name=\'DC.Identifier.URI\']").attr("content");'.  "\r\n" .
+                        '        } else { var url = ""; } '.  "\r\n" .
+                        '        if ($("meta[name=\'DC.Title\']").length != 0) {'. "\r\n" .
+                        '           var title = $("meta[name=\'DC.Title\']").attr("content");'. "\r\n" .
+                        '        } else { var title = ""; } '.  "\r\n" .
+                        '        if ($("meta[name=\'DC.Description\']").length != 0) {'. "\r\n" .
+                        '           var abstract = $("meta[name=\'DC.Description\']").attr("content");'. "\r\n" .
+                        '        } else { var abstract = ""; } '.  "\r\n" .                      
+                        '        $("#pluginOutput").coreWidget("' . $corePluginTitle . '" ,{'. "\r\n" .
+                        '            documentOAI: oai ,'. "\r\n" .
+                        '            documentUrl: url,'. "\r\n" .
+                        '            documentTitle: title,'. "\r\n" .
+                        '            documentAuthors: ["", "", ""],'. "\r\n" .
+                        '            documentAbstract: abstract,'. "\r\n" .
+                        '            apiKey: "' . $coreApiKey . '"'. "\r\n" .
+                        '    });' . "\r\n" .
+                        '});' . "\r\n" .
+                        '</script>'. "\r\n" .
+						'<!-- End CORE Plugin Section ';
 			}
 		}
 		return false;
