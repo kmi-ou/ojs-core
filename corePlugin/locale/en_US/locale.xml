@@ -8,7 +8,7 @@
 	<message key="plugins.generic.corePlugin.description"><![CDATA[Display similar articles using CORE.]]></message>
 
     <!-- Page Settings -->
-    <message key="plugins.generic.corePlugin.page.title">Related Articles (Provided by CORE)</message>
+    <message key="plugins.generic.corePlugin.page.title">Related Articles</message>
     
     
 	<!-- corePlugin Settings Management -->

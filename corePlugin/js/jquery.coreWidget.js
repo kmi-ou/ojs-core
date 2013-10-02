@@ -76,8 +76,7 @@
 							)
 						);
 					}
-				},
-                error: errorHandler
+				}
             });
             // to stop a jsonp call, you must remove the <script> tag from the DOM
             function errorHandler(jqXHR, status, error) {
