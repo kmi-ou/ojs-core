@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * The following code is a derivative work of the code from 
+ *         plugins/generic/piwik/PiwikPlugin.inc.php
+ * Copyright (c) 2003-2013 John Willinsky
+ * 
+ * Copyright (c) 2012 Samuel Pearce (samuel.pearce@open.ac.uk)
+ * Distributed under the GNU GPL v2.
+ * 
+ */
+
 import('lib.pkp.classes.plugins.GenericPlugin');
 
 class corePlugin extends GenericPlugin {
@@ -143,7 +153,7 @@ class corePlugin extends GenericPlugin {
 
         $additionalHeadData = $templateManager->get_template_vars('styleSheets');
 
-        $script1 = '<link rel="stylesheet" type="text/css" href="' . Request::getBaseUrl() . '/' . $this->getPluginPath() . '/css/jquery.coreWidget.css" media="screen">';
+        $script1 = '<link rel="stylesheet" type="text/css" href="' . Request::getBaseUrl() . '/' . $this->getPluginPath() . '/css/jquery.coreWidget.css" media="screen" />';
 
         $templateManager->assign('additionalHeadData', $additionalHeadData."\n\t".$script1);
     }
@@ -164,7 +174,7 @@ class corePlugin extends GenericPlugin {
 			if (!empty($coreApiKey)) {
 				$output =   '<!-- CORE Plugin Section -->'.	 "\r\n" .
                         '<div id="pluginOutput"></div>'. "\r\n" .
-                        '<script type="text/javascript" src="'. Request::getBaseUrl() . '/' . $this->getPluginPath() . '/js/jquery.coreWidget.js" /></script>'. "\r\n" .
+                        '<script type="text/javascript" src="'. Request::getBaseUrl() . '/' . $this->getPluginPath() . '/js/jquery.coreWidget.js" ></script>'. "\r\n" .
                         '<script type="text/javascript">'. "\r\n" .
                         '    $(function() {'. "\r\n" .
                         '        if ($("meta[name=\'DC.Identifier\']").length != 0) {'. "\r\n" .
@@ -189,7 +199,7 @@ class corePlugin extends GenericPlugin {
                         '    });' . "\r\n" .
                         '});' . "\r\n" .
                         '</script>'. "\r\n" .
-						'<!-- End CORE Plugin Section ';
+						'<!-- End CORE Plugin Section --> ';
 			}
 		}
 		return false;

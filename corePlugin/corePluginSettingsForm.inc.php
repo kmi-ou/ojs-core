@@ -1,35 +1,23 @@
 <?php
 
 /**
- * @file plugins/generic/piwik/PiwikSettingsForm.inc.php
- *
- * 
+ * The following code is a derivative work of the code from 
+ *         plugins/generic/piwik/PiwikSettingsForm.inc.php
  * Copyright (c) 2003-2013 John Willinsky
- *
- * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
- *
- * @class PiwikSettingsForm
- * @ingroup plugins_generic_piwik
- *
- * @brief Form for journal managers to modify piwik plugin settings
+ * 
+ * Copyright (c) 2012 Samuel Pearce (samuel.pearce@open.ac.uk)
+ * Distributed under the GNU GPL v2.
+ * 
  */
-
 
 import('form.Form');
 
 class corePluginSettingsForm extends Form {
 
-	/** @var $journalId int */
 	var $journalId;
 
-	/** @var $plugin object */
 	var $plugin;
 
-	/**
-	 * Constructor
-	 * @param $plugin object
-	 * @param $journalId int
-	 */
 	function corePluginSettingsForm(&$plugin, $journalId) {
              
 		$this->journalId = $journalId;
@@ -41,10 +29,6 @@ class corePluginSettingsForm extends Form {
 
 	}
     
-
-	/**
-	 * Initialize form data.
-	 */
 	function initData() {
 		$journalId = $this->journalId;
 		$plugin = &$this->plugin;
@@ -55,16 +39,10 @@ class corePluginSettingsForm extends Form {
 		);
 	}
 
-	/**
-	 * Assign form data to user-submitted data.
-	 */
 	function readInputData() {
 		$this->readUserVars(array('coreApiKey', 'corePluginTitle'));
 	}
 
-	/**
-	 * Save settings.
-	 */
 	function execute() {
 		$plugin = &$this->plugin;
 		$journalId = $this->journalId;
