@@ -12,7 +12,7 @@
 
 import('lib.pkp.classes.plugins.GenericPlugin');
 
-class corePlugin extends GenericPlugin {
+class CorePlugin extends GenericPlugin {
 
 	/**
 	 * Called as a plugin is registered to the registry
@@ -225,7 +225,7 @@ class corePlugin extends GenericPlugin {
 				break;
 			case 'settings':
 				if ($this->getEnabled()) {
-					$this->import('corePluginSettingsForm');
+					$this->import('CorePluginSettingsForm');
 					$form = &new corePluginSettingsForm($this, $journal->getJournalId());
 					if (Request::getUserVar('save')) {
 						$form->readInputData();

@@ -12,7 +12,7 @@
 
 import('form.Form');
 
-class corePluginSettingsForm extends Form {
+class CorePluginSettingsForm extends Form {
 
 	var $journalId;
 

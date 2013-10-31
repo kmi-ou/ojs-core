@@ -1,7 +1,7 @@
 <?php
 
-require_once('corePlugin.inc.php');
+require_once('CorePlugin.inc.php');
 
-return new corePlugin();
+return new CorePlugin();
 
 ?>
